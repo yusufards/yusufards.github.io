@@ -1,0 +1,69 @@
+<form name=form1>
+
+<script>
+	function proses()
+	{
+		var bagian=document.form1.bagian.value;
+		if(bagian=="HRD") var gajipokok=8000000;
+		 if(bagian=="Pemasaran") var gajipokok=6000000;
+		 if(bagian=="Produksi") var gajipokok=3000000;
+		 if(bagian=="Ob") var gajipokok=1000000;
+		document.form1.gajipokok.value=gajipokok;
+		
+		var pendidikan=document.form1.pendidikan.value;
+		var tjpendidikan=pendidikan*1000000;
+		document.form1.tjpendidikan.value=tjpendidikan;
+		
+		var tjlain=0;
+		if(document.form1.anak.checked) tjlain=tjlain+(0.1*gajipokok);
+		if(document.form1.istri.checked) tjlain=tjlain+(0.15*gajipokok);
+		if(document.form1.makan.checked) tjlain=tjlain+(0.2*gajipokok);
+		document.form1.tjlain.value=tjlain;
+		
+		var totalgaji=gajipokok + tjpendidikan + tjlain;
+		document.form1.totalgaji.value=totalgaji;
+	}
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href='css/w3.css'>
+<div class="w3-container">
+	<div class="w3-panel w3-red">
+		<center>
+		<p><h1>PENJUALAN TIKET KERETA API</p>
+	</div>
+	
+	<div class="w3-panel w3-grey">
+		<center>
+		<p>
+		<table>
+			<tr><td> Kota Tujuan <td><select class="w3-select" name="bagian">
+				<option>BANDUNG</option>
+				<option>JAKARTA</option>
+				<option>SURABAYA</option>
+			</select>
+		<tr><td>Pendidikan<td>
+			<tr><td><td></td><input class="w3-radio" type="radio" name="ekonomi" value="1">EKONOMI
+			<tr><td><td><input class="w3-radio" type="radio" name="bisnis" value="2">BISNIS
+			<tr><td><td><input class="w3-radio" type="radio" name="eksekutif" value="3">EKSEKUTIF
+		<tr><td colspan=2><hr>
+		
+		<tr><td>FASILITAS TAMBAHAN : <td><input class="w3-check" type="checkbox" id="makan">MAKAN
+		<input class="w3-check" type="checkbox" id="wifi">WIFI
+		<input class="w3-check" type="checkbox" id="minum">MINUMAN
+		<tr><td colspan=2><hr>
+		 <tr><td>Gaji Pokok<td><input class="w3-input" type="text" name="gajipokok">
+		 <tr><td>Tunjangan Pendidikan<td><input class="w3-input" type="text" name="tjpendidikan">
+		  <tr><td>Tunjangan Lain<td><input class="w3-input" type="text" name="tjlain">
+		  <tr><td>Total Gaji<td><input class="w3-input" type="text" name="totalgaji">
+		</table>
+	</div>
+	
+	<div class="w3-panel w3-blue">
+		<center>
+		<p>
+		<input type="button" class="w3-buttom w3-green" value="Proses" onclick="proses()">
+		<input type="button" class="w3-buttom w3-yellow" value="Clear" onclick="hapus">
+	</div>
+	
+	

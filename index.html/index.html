@@ -1,0 +1,80 @@
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<style>
+    body {
+        background-color: black;
+        background-image: url(css/baground.png);
+        background-size: cover;
+    }
+    .crypto {
+        width: 120px;
+        height: 40;
+        text-align: left,center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+</style>
+<body>
+    <img src="css/Rectangle 1.png" width="100%" height="45">
+<div class="w3-black">
+    <center>
+        <button style="color: orange;" class="w3-bar-item w3-button" onclick="openKota('Home')"><img src="css/Bitcoin_logo.png" width="80px"></button>
+        <button style="color: orange; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="w3-bar-item w3-button" onclick="openKota('Home')">Home</button>
+        <button style="color: orange; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="w3-bar-item w3-button" onclick="openKota('Buy')">Buy</button>
+        <button style="color: orange; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="w3-bar-item w3-button" onclick="openKota('Details')">Details</button>
+    </center>
+</div>
+<div id="Home" class="w3-container kota">
+    <div>
+        <br>
+        <br>
+        <br>
+        <img src="css/Decore 2.png" width="295px" height="308px" align="right" class="w3-animate-right">
+        <br>
+        <br>
+        <img src="css/Nav Row.png" width="400px" height="180px" style="padding-left: 30;" class="w3-animate-left">
+        <br>
+        <p>
+            <button style="background-color: orange; border-radius: 12px; color: white; margin-left: 30;" class="crypto w3-animate-left" onclick="openKota('Buy')">Buy $</button> 
+        </p>   
+        </br>
+        <br>
+        <br>
+    </div>
+</div>
+<div id="Buy" class="w3-container kota" style="display:none">
+    <center>
+        <br>
+        <p>
+            <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: orange;">CHOICE COIN :</h1>
+        </p>
+        <br>
+        <p>
+            <a href="bitcoin.html"><button style="color: orange;" class="w3-bar-item w3-button w3-animate-left"><img src="css/bitcoin2.png" width="120px"></button></a>
+            <a href="solana.html"><button style="color: orange;" class="w3-bar-item w3-button w3-animate-left"><img src="css/solana.png" width="120px"></button></a>
+            <a href="ethereum.html"><button style="color: orange;" class="w3-bar-item w3-button w3-animate-right"><img src="css/ethereum.png" width="120px"></button></a>
+            <a href="cardano.html"><button style="color: orange;" class="w3-bar-item w3-button w3-animate-right"><img src="css/cardano.png" width="120px"></button></a>
+        </p>
+    </center>
+</div>
+<div id="Details" class="w3-container kota w3-animate-zoom" style="display:none">
+    <center>
+        <img src="css/malas.png" width="1200" height="720">
+    </center>
+</div>
+
+
+<script>
+    function openKota(namakota) {
+     var i;
+     var x = document.getElementsByClassName("kota");
+     for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none"; 
+     }
+     document.getElementById(namakota).style.display = "block"; 
+    }
+</script>
+</body>
+</html>

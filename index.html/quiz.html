@@ -1,0 +1,69 @@
+<form name=form>
+    <script>
+    function proses(){
+    var tujuan=document.form.Bagian.value;
+    if(tujuan=="BANDUNG") var ekonomi=70000;
+    if(tujuan=="JAKARTA") var ekonomi=100000;
+    if(tujuan=="SURABAYA") var ekonomi=150000;
+    document.getElementById('totalharga').form.ekonomi.value=tujuan;
+    
+    var Pendidikan=document.form.Pendidikan.value;
+    var tjpendidikan=Pendidikan*1000000;
+    document.form.tjpendidikan.value=tjpendidikan;
+    
+    var tjlain=0;
+    if(document.form.anak.checked) tjlain=tjlain+(0.1*GajiPokok);
+    if(document.form.istri.checked) tjlain=tjlain+(0.15*GajiPokok);
+    if(document.form.makan.checked) tjlain=tjlain+(0.2*GajiPokok);
+    document.form.tjlain.value=tjlain;
+    var totalgaji=GajiPokok+tjpendidikan+tjlain;
+    document.form.totalgaji.value=totalgaji;
+    }
+    </script>
+    
+    
+    <meta name ="viewport" content ="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <div class="w3-container">
+    
+        <div class="w3-panel w3-orange">
+            <center>
+            <p><h1>PENJUALAN TIKET KERETA API
+        </div>
+        
+        
+        
+        <div class="w3-panel w3-blue">
+            <center>
+            <p>
+            <table>
+                <tr><td>KOTA TUJUAN <td><select class="w3-select" name="Bagian">
+                <option id="bandung">BANDUNG
+                <option id="jakarta">JAKARTA
+                <option id="surabaya">SURABAYA
+                </select>
+                <tr><td>KELAS<td><input class="w3-radio" type="radio" name="ekonomi" value="1">EKONOMI
+                <tr><td><td><input class="w3-radio" type="radio" name="bisnis" value="2">BISNIS
+                <tr><td><td><input class="w3-radio" type="radio" name="eksekutif" value="3">EKSEKUTIF
+                <tr><td colspan=2><hr>
+                <tr><td>FASILITAS TAMBAHAN<td><input class="w3-check" type="checkbox" name=makan>MAKAN
+                <tr><td><td><input class="w3-check" type="checkbox" name=wifi>WIFI
+                <tr><td><td><input class="w3-check" type="checkbox" name=minuman>MINUMAN
+                x<br>
+                <tr><td>JUMLAH <td><input class="w3-input" type="text" name="jumlah">
+                <tr><td colspan=2><hr>
+                    <tr><td>HARGA TIKET + TAMBAHAN <td><input class="w3-input" type="text" name="htt">
+                    <tr><td>SUB TOTAL <td><input class="w3-input" type="text" name="subtotal">
+                    <tr><td>DISKON <td><input class="w3-input" type="text" name="diskon">
+                    <tr><td>TOTAL HARGA <td><input class="w3-input" type="text" id="totalharga">
+            </table>
+        </div>
+        
+        
+        
+        <div class="w3-panel w3-yellow">
+            <center>
+            <p>
+            <input type="button" class="w3-buttonw3-blue" value="proses" onclick="proses()">
+            <input type="button" class="w3-buttonw3-red" value="clear" onclick="hapus()">
+        </div>

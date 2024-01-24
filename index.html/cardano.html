@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+    <title>Document</title>
+</head>
+<style>
+    body 
+    {
+        background-image: url(css/baground.png);
+        background-color: black;
+        background-size: cover;
+    }
+</style>
+<script>
+    function calc() {
+      var a = parseFloat(document.getElementById('a').value);
+      var b = parseFloat(document.getElementById('output').value);
+      document.getElementById('outputjumlah').value = a;
+
+    }
+
+    function harga()
+    {
+        var a = parseFloat(document.getElementById('a').value);
+        var b = parseFloat(document.getElementById('lihat').value);
+        document.getElementById('outputharga').value = a * 8.23442;
+    }
+    
+  </script>
+<body>
+    <div class="w3-container"">
+        <h2>Market bitcoin2</h2>
+
+        <div class="w3-card-4">
+            <div class="w3-container w3-blue">
+                <h2 style="color: white;">Cardano</h2>
+            </div>
+                <form class="w3-container" style="background-color: gray;">
+                    <p>
+                        <label style="color: white;">Jumlah : </label>
+                        <input class="w3-input" type="text" id="a">
+                    </p>
+                    <p>
+                        <label style="color: white;">Harga : </label>
+                        <input class="w3-input" id="outputharga">
+                        <p>
+                            <input style="border-radius: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" type="button" class="w3-button w3-blue" value="Lihat Harga" id="lihat" onclick="harga()">
+                        </p>
+                        <hr>
+
+                        <input style="border-radius: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" type="button" class="w3-button w3-blue" value="Buy $" id="output" onclick="calc()">
+                        <p>
+                            <label style="color: white;">Jumlah Bitcoin Anda : </label>
+                            <input class="w3-input" id="outputjumlah">
+                        </p>
+
+
+                        
+                    </p>
+                </form>
+                <p>
+                    <a href="index.html"><button style="background-color: blue; border-radius: 12px; color: white;">Back</button></a>
+                </p>
+        </div>
+    </div>
+</body>
+</html>
